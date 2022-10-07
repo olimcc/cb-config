@@ -16,7 +16,7 @@ class TestYAMLContents(unittest.TestCase):
                     self.assertIn(k, entry)
                 if 'ranges' in entry:
                     for range in entry['ranges']:
-                        for k in ['startDate', 'endDates']:
+                        for k in ['startDate', 'endDate']:
                             self.assertIn(k, range, f'Full erroneous object:\n{yaml.dump(entry)}')
                 if 'sites' in entry:
                     self.assertTrue(isinstance(entry['sites'], list), f'Full erroneous object:\n{yaml.dump(entry)}')
