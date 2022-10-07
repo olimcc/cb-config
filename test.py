@@ -19,7 +19,7 @@ class TestYAMLContents(unittest.TestCase):
                         for k in ['startDate', 'endDates']:
                             self.assertIn(k, range, f'Full erroneous object:\n{yaml.dump(entry)}')
                 if 'sites' in entry:
-                    self.assertTrue(isinstance(entry['sites'], list, f'Full erroneous object:\n{yaml.dump(entry)}'))
+                    self.assertTrue(isinstance(entry['sites'], list), f'Full erroneous object:\n{yaml.dump(entry)}')
 
 if __name__ == '__main__':
     unittest.main()
