@@ -1,8 +1,8 @@
-name: GitHub Actions Demo
+name: Validate YML
 run-name: Validate YML
 on: [push]
 jobs:
-  Validate YML:
+  Validate-YML:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
