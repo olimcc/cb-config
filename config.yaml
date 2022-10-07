@@ -1,8 +1,6 @@
 ---
 # some convenience references
 # can unpack elsewhere in file with *
-# for example:
-# day: *fullweek
 shortcuts:
 - &weekend ["fri", "sat", "sun"]
 - &fullweek ["mon", "tue", "wed", "thur", "fri", "sat", "sun"]
@@ -12,42 +10,23 @@ shortcuts:
 
 # Each target is a campground
 targets:
-  # one of [reserve_ca, recreation_gov]
 - api: reserve_ca
-  # For reservecalifornia, place is the park id
-  # https://www.reservecalifornia.com/Web/#!park/682
-  place: '682'
-  # placeName is annoying to retrieve from the API, so we include
-  # it here so message print outs are nice
+  place: "682"
   placeName: Steep Ravine
-  # individual campgrounds within the park
-  # for example, cabins are 766, campsites are 590
-  # https://www.reservecalifornia.com/Web/#!park/682/766
-  campground:
-  - 590
-  - 766
-  # sites are optional, if you want to be picky
-  # for reserve_ca these site ids are typically after a #
-  # in the site name listed on the website
+  campground: [590, 766]
   sites: [
         "CB04", "CB07", "CB08", "CB09", "CB10",
         "EN01", "EN02", "EN03", "EN04", "EN05", "EN06"]
-  # days of week the trip could start on
   day: ["fri", "sat"]
-  # duration of stay
   nights: 1
-  # months forward to search for
-  # optionally can specify a "ranges" key to look for specific dates only
   months: 6
-  # who should availability go to
   telegramChats:
   - *campingPremiumTG
 
 - api: reserve_ca
-  place: '641'
+  place: "641"
   placeName: Emerald Bay
-  campground:
-  - 469
+  campground: [469]
   sites: ["B001", "B021", "B022"]
   day: *fullweek
   nights: 1
@@ -56,35 +35,26 @@ targets:
   - *campingPremiumTG
 
 - api: reserve_ca
-  place: '679'
+  place: "679"
   placeName: Montana De Oro SP
-  campground:
-  - 577
-  sites:
-  - IC09
-  - IC11
-  - IC49
+  campground: [577]
+  sites: ["IC09", "IC11", "IC49"]
   day: *weekend
-  # look for specific date windows only
-  # possible to set multiple ranges
   ranges:
-  - startDate: '2022-09-12'
-    endDate: '2022-10-19'
+  - startDate: "2022-09-12"
+    endDate: "2022-10-19"
   nights: 1
   months: 6
   telegramChats:
   - *camppingTG
   - *mnaCampsitesTG
 
-# Example URL for Kirby Cove
-# https://www.recreation.gov/camping/campgrounds/232491
 - api: recreation_gov
   # place is redundant in the case of recreation.gov
   # as place == campground
-  place: '232491'
+  place: "232491"
   placeName: Kirby Cove
-  campground:
-  - 232491
+  campground: [232491]
   day: *weekend
   nights: 1
   months: 5
@@ -93,10 +63,9 @@ targets:
   - *campingPremiumTG
 
 - api: recreation_gov
-  place: '232447'
+  place: "232447"
   placeName: Yosemite - Upper Pines
-  campground:
-  - 232447
+  campground: [232447]
   sites: [
         "030", "032", "033", "035",
         "071", "073", "074", "075", "076", "078",
@@ -106,8 +75,8 @@ targets:
         "208", "210", "211", "213", "222", "226", "228", "230", "232", "234", "239", "240"]
   day: ["mon", "tue", "wed", "thur", "fri", "sat", "sun"]
   ranges:
-  - startDate: '2022-11-25'
-    endDate: '2022-11-28'
+  - startDate: "2022-11-25"
+    endDate: "2022-11-28"
   nights: 2
   months: 5
   telegramChats:
