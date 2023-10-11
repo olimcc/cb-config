@@ -17,9 +17,12 @@ targets:
   sites: [
         "CB04", "CB07", "CB08", "CB09", "CB10",
         "EN01", "EN02", "EN03", "EN04", "EN05", "EN06"]
-  day: ["fri", "sat"]
+  day: ["fri", "sat", "sun"]
   nights: 1
   months: 6
+  ranges:
+  - startDate: "2023-10-26"
+    endDate: "2023-11-10"
   telegramChats:
   - *campingPremiumTG
 
@@ -75,8 +78,8 @@ targets:
         "208", "210", "211", "213", "222", "226", "228", "230", "232", "234", "239", "240"]
   day: ["mon", "tue", "wed", "thur", "fri", "sat", "sun"]
   ranges:
-  - startDate: "2022-11-25"
-    endDate: "2022-11-28"
+  - startDate: "2023-11-20"
+    endDate: "2023-11-26"
   nights: 2
   months: 5
   telegramChats:
